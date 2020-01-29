@@ -1,0 +1,34 @@
+<!-- <h1> <% for(var i=0 ;i<5 ;i++){%>
+    <%= i %>
+<% } %> </h1> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>search things</title> -->
+    <% include ./include/head %>
+    <link rel="stylesheet" href='/stylesheets/searchStyle.css' />
+<!-- </head> -->
+<body>
+    <% include ./include/nav %>
+    <ol  class="bookUl" type="1" start="1">
+        <% result.forEach((item)=>{%>
+            <form action="/download" enctype="multipart/form-data" method="GET" class="downloadContent" >
+                <li class="bookList" >  <%= item.fname %> </li> 
+                <button class="downloadBtn" name=<%=item.fname %>>  Download </button>
+            </form>
+        <% }) %>
+    </ol>
+    <!-- <ul class="bookUl">
+        <% result.forEach((item)=>{%>
+            <form action="/download" enctype="multipart/form-data" method="GET" class="downloadContent" >
+                <li class="bookList" >  <%= item.fname %> </li> 
+                <button class="downloadBtn" name=<%=item.fname %>>  Download </button>
+            </form>
+        <% }) %>
+    </ul>  -->
+</body>
+</html>

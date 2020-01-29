@@ -1,0 +1,18 @@
+<! DOCTYPE html>
+<html>
+    <% include ./include/head %>
+    <link rel="stylesheet" href='/stylesheets/searchStyle.css' />
+    <link rel="stylesheet" href ="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <body>
+        <% include ./include/nav %>
+        <ul class="bookUl">
+            <% result.forEach((item)=>{%>
+                <form action="/download" enctype="multipart/form-data" method="GET" class="downloadContent" >
+                    <li class="bookList" >  <%= item.fname %> </li> 
+                    <button class="downloadBtn" name=<%=item.fname %>>  Download </button>
+                </form>
+            <% }) %>
+        </ul>
+    </body>
+</html>

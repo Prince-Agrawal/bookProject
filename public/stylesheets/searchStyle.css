@@ -1,0 +1,71 @@
+
+.downloadBtn{
+    background: blue; 
+    color: white; 
+    width: 120px; 
+    height: 50px;
+    margin-left: 87%;
+    margin-top: -1.2%;
+}
+
+
+.bookUl{
+    margin-top: 7%;
+    list-style-type: decimal;
+}
+
+.downloadContent{
+    margin-top: 3%;
+    width: 88%;
+    margin-left: 3%;
+    padding: .5%;
+    border: 15px , black , solid ;
+    padding-left: 2.2%;
+    background-color: linen;
+}
+
+@media(max-width:768px){
+    .downloadBtn{
+        background: blue; 
+        color: white; 
+        width: 100%; 
+        height: 50px;
+        margin-left: 87%;
+        margin-top: -1.2%;
+    }
+}    
+    
+@media(max-width:768px){
+    .bookUl{
+        width: 100%;
+        margin-top: 7%;
+        list-style-type: decimal;
+    }
+}
+    
+
+ @media(max-width:768px){
+    .downloadContent{
+        margin-top: 3%;
+        width: 100%;
+        margin-left: 3%;
+        padding: .5%;
+        border: 15px , black , solid ;
+        padding-left: 2.2%;
+        background-color: linen;
+    }
+}
+
+    
+
+
+
+
+/* .bookList{
+    width: 88%;
+    margin-left: 5%;
+    padding: 2%;
+    border: 15px , solid ;
+    background-color: linen;
+} */
+

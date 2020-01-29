@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Contact Us form</title>
+    <link rel='stylesheet' href='/stylesheets/contactUs.css' />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+<body>
+	  
+
+<div class="contact-us">
+
+  <form >
+  <div class="title">
+    <h1>Contact us</h1>
+  </div>
+  <div class="form">
+    <div class="form-items">
+      <input type="text" class="inputUsername" placeholder="Username">
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="form-items">
+      <input type="text" class="inputEmail" placeholder="Email">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="form-items">
+      <textarea class="input message" cols="30" rows="10" placeholder="Message....."></textarea>
+    </div>
+  </div>
+  
+  <div class="btn">
+    <input type="submit" value="submit">
+    
+  </div>
+  </form >
+
+  <!-- Submit
+    <i class="fas fa-arrow-right"></i> -->
+
+  
+  <div class="social-icons">
+    <div class="facebook">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+    <div class="twitter">
+      <i class="fab fa-twitter"></i>
+    </div>
+    <div class="google">
+      <i class="fab fa-google-plus-g"></i>
+    </div>
+  </div>
+  
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+    <script>
+        $('form').on('submit' , (e)=>{
+
+            e.preventDefault()
+             
+            const username = $('.inputUsername').val().trim();
+            const email = $('.inputEmail').val().trim();
+            const message = $('.input.message').val().trim();
+
+            const data = {
+                username,
+                email,
+                message
+            }
+
+            $.post('/messageSubmit/email' , data , ()=>{
+                console.log('server received our data');
+            })
+        })
+    </script>
+ 
+    
+</body>
+</html>
